@@ -1,0 +1,19 @@
+extends layout
+
+block content
+
+  .book-wrapper
+    .book-container
+      .single-book
+        img(src="/assets/img/" + book.image, alt="")
+        form#book-edit(method="POST" action="/book/" + book._id)
+          .form-group
+            input#image(type='file', name='image')
+            label(for='image') image
+          .form-group
+            input#title(type='text', value=book.title, name='title', required)
+            label(for='title') title
+          .form-group
+            input#author(type='text', value=book.author, name='author', required)
+            label(for='author') author
+          button#add-btn(type='submit') edit

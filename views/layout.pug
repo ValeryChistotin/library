@@ -1,0 +1,27 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title Document
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/css/main.css')
+  body
+    header
+      .info
+        ul.help
+          li
+            a(href='#') help center
+          li
+            a(href='#') our support
+        .user
+          img(src='/assets/img/avatar-1.png', alt='person')
+          p john doe
+          i.fa.fa-check-circle(aria-hidden='true')
+
+    block content
+
+    footer
+      .questions
+        i.fa.fa-question-circle-o(aria-hidden='true')
+      .settings
+        i.fa.fa-cog(aria-hidden='true')

@@ -1,0 +1,100 @@
+extends layout
+
+block content
+
+  .some-wrapper
+    section
+      aside
+        .add
+          button#open
+            i.fa.fa-plus(aria-hidden='true')
+            |  add a book
+          form#main(method="POST" action="/")
+            .modal#modal
+              .content
+                button#close.btn.close-modal
+                  i.fa.fa-times(aria-hidden='true')
+                .form-group
+                  input#image(type='file', name='image')
+                  label(for='image') image
+                .form-group
+                  input#title(type='text', placeholder='title', name='title', required)
+                  label(for='title') title
+                .form-group
+                  input#author(type='text', placeholder='author', name='author', required)
+                  label(for='author') author
+                button#add-btn(type='submit') add
+        hr
+        .options
+          ul
+            li: a(href='#')
+                  i.fa.fa-book(aria-hidden='true')
+                  | now reading
+            li: a(href='#')
+                  i.fa.fa-globe(aria-hidden='true')
+                  | browse
+            li: a(href='#')
+                  i.fa.fa-shopping-cart(aria-hidden='true')
+                  | buy books
+            li: a(href='#')
+                  i.fa.fa-star(aria-hidden='true')
+                  | favourite books
+            li: a(href='#')
+                  i.fa.fa-th-list(aria-hidden='true')
+                  | wishlist
+            li: a(href='#')
+                  i.fa.fa-history(aria-hidden='true')
+                  | history
+        hr
+        .categories
+          .aside-container
+            .categories-container
+              ul.catgs
+                each link in ['must read titles', 'best of list', 'classic novels', 'non fiction']
+                  li: a(href="#")= link
+        hr
+        .notifications
+          .aside-container
+            .notifications-container#notifications
+
+    article
+      .browse-container
+        .container
+          .browse
+            h2 browse available books
+      .navigation-container
+        .container
+          nav
+            ul.navigation
+              li
+                a(href='#') all books
+              li
+                a(href='#') most recent
+              li
+                a#popular(href='#') most popular
+              li
+                a(href='#') free books
+            .find
+              input#search.search(type='text', name='search', placeholder='enter keywords')
+              i.fa.fa-search(aria-hidden='true')
+      .books-container
+        .container
+          .books#books
+            each book in books
+              .book
+                .special-items
+                  a.special(href="/book/" + book._id)
+                    i.fa.fa-pencil(aria-hidden='true')
+                  a.fa.fa-times.book-delete.special(href="#", data-id=book._id)
+                img(src="/assets/img/" + book.image, alt="")
+                .book-about
+                  .rights
+                    a(href="/book/" + book._id).title= book.title
+                    p by 
+                      span.name= book.author
+                  .rating
+                    -for(var i = 5; i--;)
+                      label.rating-item.fa.fa-star(data-rate=i+1)
+
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js')
+  script(src='js/main.js')

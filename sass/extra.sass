@@ -1,0 +1,140 @@
+$bgc-color: #1f2637
+
+*
+  margin: 0
+  padding: 0
+
+html
+  width: 100%
+  height: 100%
+
+body
+  width: 100%
+  height: 100%
+  color: #444c63
+  font-size: 16px
+  font-family: 'ProximaNova', sans-serif
+
+@font-face
+  font-family: 'ProximaNova'
+  src: url('../assets/fonts/ProximaNova-Regular.ttf')
+
+
+::-webkit-scrollbar
+  width: 6px
+  height: 350px
+
+::-webkit-scrollbar-thumb
+  background: #ccd5e4
+  border-radius: 5px
+
+// =============================
+//  Containers
+// =============================
+
+.some-wrapper
+  display: flex
+
+.aside-container
+  width: 160px
+  margin: auto
+
+.browse-container
+  width: 100%
+  height: 70px
+  background-color: #eef1f7
+  border-bottom: 2px solid #dadfea
+
+.navigation-container
+  width: 100%
+  height: 49px
+  background-color: #eef1f7
+  border-bottom: 2px solid #dadfea
+
+.container
+  width: 1100px
+  margin: auto
+
+header
+  width: 100%
+  height: 45px
+  background-color: #2f364a
+
+section
+  display: flex
+
+aside
+  width: 14.8em
+  background-color: #1f2637
+
+article
+  display: flex
+  flex-direction: column
+  width: 100%
+
+// =============================
+//  Common
+// =============================
+
+ul li
+  list-style: none
+  a
+    font-size: .75em
+    text-decoration: none
+
+h2, h3, h4, a, input, label, .name
+  text-transform: capitalize
+
+button
+  cursor: pointer
+  text-transform: uppercase
+
+hr
+  width: 100%
+  height: 4px
+  border-left: none
+  border-right: none
+  border-top: 1px solid #141824
+  border-bottom: 1px solid rgba(120, 130, 157, 0.1)
+  background-color: rgba(24, 30, 44, 0.8)
+
+// =============================
+//  Single Book
+// =============================
+
+.book-wrapper
+  width: 100%
+  height: 100%
+  background-color: $bgc-color
+
+.book-container
+  display: flex
+  justify-content: center
+  align-items: center
+
+  height: 100%
+
+.single-book
+  display: flex
+  flex-direction: column
+  justify-content: space-around
+  align-items: center
+
+  width: 400px
+  height: 600px
+  border-radius: 5px
+  background-color: rgba(0, 0, 0, .3)
+  box-shadow: 0 5px 7px rgba(0, 0, 0, .5)
+  img
+    width: 160px
+
+form#book-edit
+  display: flex
+  flex-direction: column
+  justify-content: space-around
+  align-items: center
+
+  width: 400px
+  height: 300px
+  opacity: 1
+  z-index: 1
